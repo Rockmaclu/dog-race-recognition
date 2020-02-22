@@ -100,16 +100,16 @@ def getCloseImages(image,ran):
     
     stringVector = tensorToString(embeddingsVector)
 
-    cur.execute('SELECT queryimage(%s,%s);',[stringVector,ran])
+    cur.execute('SELECT * FROM queryimage(%s,%s);',[stringVector,ran])
 
-    resultImages = cur.fetchall() 
-
+    queryImages = cur.fetchall() 
+    
     cur.close()
     if conn is not None:
         conn.close()
         print('Database connection closed.')
 
-    return resultImages
+    return queryImages
 
 def cleanImage(imagePath):
     response = requests.post(
