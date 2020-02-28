@@ -1,6 +1,5 @@
 
 import os,io
-import cv2
 import base64
 from flask import Flask, request, redirect, url_for,jsonify
 from werkzeug.utils import secure_filename
@@ -47,4 +46,4 @@ def loadImages():
         return jsonify({'success':'true','message':'Imagenes cargadas con exito.'})
         
 if __name__ == '__main__':
-     app.run(port='5002')
+     app.run(port=5000)
