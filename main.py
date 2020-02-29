@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 from flask import jsonify
 from tools import getCloseImages,loadImage
 from PIL import Image
+from flask_cors import CORS
 
 ## AUXILIAR TOOLS ##
 def stringToIMG(base64_string):
@@ -16,6 +17,8 @@ def stringToIMG(base64_string):
 ## MAIN API ##
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route('/api/query', methods=['POST'])
 def query():
