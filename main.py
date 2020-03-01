@@ -49,4 +49,4 @@ def loadImages():
         return jsonify({'success':'true','message':'Imagenes cargadas con exito.'})
         
 if __name__ == '__main__':
-     app.run(port=5000)
+     app.run(port=5002)
